@@ -11,7 +11,7 @@ Stable release process
  - Merge `master => develop`
 
 Or use the below to automate it. *note* change `npm version minor` to whatever is needed.
- `git checkout master && git merge develop && git push && npm version minor && npm publish && git checkout develop && git merge master`
+ `git checkout master && git merge develop && git push && npm version minor && npm publish && git push && git checkout develop && git merge master && git push`
 
 # Machine Setup
 In order for this to work first need to setup github through cmd
