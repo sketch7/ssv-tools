@@ -14,7 +14,7 @@
 [![npm version](https://badge.fury.io/js/ssv-tools.svg)](https://badge.fury.io/js/ssv-tools)
 
 frontend tooling for builds, lints etc...
-this includes sharing of configs:
+includes sharing of the following configs:
  - `tslint.json`
  - `.eslintrc`
  - `tsconfig.base.json`
