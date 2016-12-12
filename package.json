@@ -1,6 +1,6 @@
 {
   "name": "@ssv/tools",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "frontend tooling for builds, lints etc...",
   "keywords": [
     "sketch7",
@@ -8,8 +8,7 @@
     "build",
     "utils"
   ],
-  "scripts": {
-  },
+  "scripts": {},
   "author": "Stephen Lautier <stephen.lautier@outlook.com>",
   "license": "MIT",
   "repository": {
