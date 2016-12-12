@@ -8,6 +8,7 @@ build
 /typings
 .bithoundrc
 .editorconfig
+.eslintrc
 .gitignore
 .npmignore
 appveyor.yml
@@ -18,3 +19,4 @@ system.config.js
 tsconfig.json
 typings.json
 wallaby.js
+tslint.json

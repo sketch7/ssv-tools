@@ -1,17 +1,3 @@
 {
-	"rules": {
-		"no-trailing-spaces": "warn",
-		"comma-dangle": "off",
-		"quotes": [
-			"warn",
-			"double"
-		],
-		"no-mixed-spaces-and-tabs": [
-			"warn",
-			"smart-tabs"
-		]
-	},
-	"env": {
-		"browser": false
-	}
+	"extends": "./base.eslintrc"
 }

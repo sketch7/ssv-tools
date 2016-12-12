@@ -15,9 +15,9 @@
 
 frontend tooling for builds, lints etc...
 includes sharing of the following configs:
- - `tslint.json`
  - `.eslintrc`
- - `tsconfig.base.json`
+ - `tslint.json`
+ - `tsconfig.json`
 
 
 In order to contribute please read the [Contribution guidelines][contribWiki].
@@ -34,8 +34,31 @@ npm install @ssv/tools --save
 ```
 
 # Usage
-*coming soon*
 
+## Base configs
+
+### eslint
+```json
+{
+	"extends": "./node_modules/@ssv/tools/base.eslintrc"
+}
+```
+
+### tslint
+```json
+{
+	"extends": [
+		"./node_modules/@ssv/tools/tslint.base.json"
+	]
+}
+```
+
+### tsconfig
+```json
+{
+	"extends": "./node_modules/@ssv/tools/tsconfig.base.json"
+}
+```
 
 # Getting Started
 
