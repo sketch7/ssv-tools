@@ -2,10 +2,16 @@
 	"extends": "./tsconfig.base.json",
 	"compilerOptions": {
 		"module": "commonjs",
-		"target": "es2015"
+		"target": "es2015",
+		"types": [
+			"node"
+		],
+		"lib": [
+			"es2015"
+		],
+		"outDir": "dist/commonjs"
 	},
 	"include": [
-		"src/**/*",
-		"test/**/*"
+		"src/**/*"
 	]
 }
