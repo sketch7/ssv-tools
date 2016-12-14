@@ -1,4 +1,5 @@
 const spawn = require("cross-spawn-promise");
+const fs = require("fs");
 const path = require("path");
 import * as chalk from "chalk";
 
@@ -18,8 +19,10 @@ export function compileTsc(opts: {
 		args.push("--outDir");
 		args.push(`dist/${opts.module}`);
 	}
-	console.log(chalk.blue(`compileTsc (${opts.module})...`));
-	return spawn(path.join(__dirname, "../../node_modules/.bin/tsc"), args, { stdio: "inherit" })
+	console.log(chalk.blue(`compile tsc (${opts.module})...`));
+
+	const commandPath = getLocalDepOrRoot("node_modules/.bin/tsc");
+	return spawn(commandPath, args, { stdio: "inherit" })
 		.catch((error: any) => {
 			if (!error) {
 				return;
@@ -43,7 +46,9 @@ export function rollup(opts: {
 		opts.configPath || "./rollup.config.js",
 	];
 	console.log(chalk.blue(`rollup...`));
-	return spawn(path.join(__dirname, "../../node_modules/.bin/rollup"), args, { stdio: "inherit" })
+
+	const commandPath = getLocalDepOrRoot("node_modules/.bin/rollup");
+	return spawn(commandPath, args, { stdio: "inherit" })
 		.catch((error: any) => {
 			if (!error) {
 				return;
@@ -54,4 +59,9 @@ export function rollup(opts: {
 				process.exit(1);
 			}
 		});
+}
+
+function getLocalDepOrRoot(file: string): string {
+	const localDep = path.join(__dirname, "../../", file);
+	return fs.existsSync(localDep) ? localDep : file;
 }

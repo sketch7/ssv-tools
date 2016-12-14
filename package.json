@@ -12,7 +12,7 @@
     "lint": "tslint --project tsconfig.json",
     "prebuild": "rimraf dist",
     "build": "tsc -p tsconfig.json",
-    "magic-publish": "git checkout master && git merge develop && git push && npm run build && npm version minor && npm publish && git push && git checkout develop && git merge master && git push"
+    "magic-publish": "git checkout master && && git pull && git merge develop && git push && npm run build && npm version minor && npm publish && git push && git checkout develop && git merge master && git push"
   },
   "author": "Stephen Lautier <stephen.lautier@outlook.com>",
   "license": "MIT",
