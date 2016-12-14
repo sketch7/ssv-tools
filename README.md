@@ -13,7 +13,7 @@
 [![bitHound Overall Score](https://www.bithound.io/github/sketch7/ssv-tools/badges/score.svg)](https://www.bithound.io/github/sketch7/ssv-tools)
 [![npm version](https://badge.fury.io/js/ssv-tools.svg)](https://badge.fury.io/js/ssv-tools)
 
-frontend tooling for builds, lints etc...
+tools and utilities used for builds and develop sketch7 (ssv) libraries.
 includes sharing of the following configs:
  - `.eslintrc`
  - `tslint.json`
@@ -35,28 +35,53 @@ npm install @ssv/tools --save
 
 # Usage
 
+## API
+
+```ts
+import { compileTsc, rollup } from "@ssv/tools";
+
+// compile typescript
+compileTsc({
+    module: "es2015",
+    configPath: "./tsconfig.build.json",
+    continueOnError: args.continueOnError
+});
+
+// rollup
+rollup({ continueOnError: args.continueOnError });
+```
+
+
+### ES5
+for usage with es5, use as following:
+
+```ts
+const ssvTools = require("@ssv/tools");
+ssvTools.compileTsc(...);
+```
+
 ## Base configs
 
 ### eslint
 ```json
 {
-	"extends": "./node_modules/@ssv/tools/base.eslintrc"
+    "extends": "./node_modules/@ssv/tools/base.eslintrc"
 }
 ```
 
 ### tslint
 ```json
 {
-	"extends": [
-		"./node_modules/@ssv/tools/tslint.base.json"
-	]
+    "extends": [
+        "./node_modules/@ssv/tools/tslint.base.json"
+    ]
 }
 ```
 
 ### tsconfig
 ```json
 {
-	"extends": "./node_modules/@ssv/tools/tsconfig.base.json"
+    "extends": "./node_modules/@ssv/tools/tsconfig.base.json"
 }
 ```
 
