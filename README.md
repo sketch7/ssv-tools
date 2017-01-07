@@ -40,15 +40,39 @@ npm install @ssv/tools --save
 ```ts
 import { compileTsc, rollup } from "@ssv/tools";
 
-// compile typescript
+// compile typescript - execute typescript with cli.
 compileTsc({
     module: "es2015",
     configPath: "./tsconfig.build.json",
     continueOnError: args.continueOnError
 });
 
-// rollup
+// rollup - execute rollup with cli.
 rollup({ continueOnError: args.continueOnError });
+```
+
+### gulp utils
+```ts
+import { setGulpContext, registerGulpMultiTargetBuilds } from "@ssv/tools";
+import gulp from "gulp";
+
+// before geting started with gulp utils, you need to invoke this once in order to share same instance of gulp.
+setGulpContext(gulp)
+
+// generates and register task for gulp by convention for multi-targetting build e.g. amd, umd, es2015 etc...
+// e.g. scripts - compile:ts | compile:ts:dev | compile:ts:TARGET
+registerGulpMultiTargetBuilds({
+    taskName: "html",
+    action: compileHtml,
+    config: { 
+        buildTargets: [
+            "es2015",
+            "amd",
+            "umd"
+        ],
+	    devTarget: "amd", 
+    }
+});
 ```
 
 

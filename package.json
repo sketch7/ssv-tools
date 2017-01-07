@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "lint": "tslint --project tsconfig.json",
-    "prebuild": "rimraf dist",
+    "prebuild": "rimraf dist && npm run lint",
     "build": "tsc -p tsconfig.json",
     "magic-publish": "git checkout master && git pull && git merge develop && git push && npm run build && npm version minor && npm publish && git push && git checkout develop && git merge master && git push"
   },
@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "@types/chalk": "^0.4.31",
+    "@types/gulp": "^3.8.32",
     "@types/node": "0.0.3",
     "require-dir": "^0.3.1",
     "rimraf": "^2.5.4",
@@ -35,5 +36,8 @@
     "cross-spawn-promise": "^0.9.0",
     "rollup": "^0.37.0",
     "typescript": "^2.1.0"
+  },
+  "peerDependencies": {
+    "gulp": "^3.9.1"
   }
 }
