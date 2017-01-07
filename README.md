@@ -60,7 +60,7 @@ import gulp from "gulp";
 setGulpContext(gulp)
 
 // generates and register task for gulp by convention for multi-targetting build e.g. amd, umd, es2015 etc...
-// e.g. scripts - compile:ts | compile:ts:dev | compile:ts:TARGET
+// e.g. compile:styles (all) | compile:styles:dev (dev target) | compile:styles:TARGET etc... (compile:styles:es2015).
 registerGulpMultiTargetBuilds({
     taskName: "html",
     action: compileHtml,

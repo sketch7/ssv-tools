@@ -24,7 +24,7 @@ export function setGulpContext(gulp: gulp.Gulp): void {
 export function registerGulpMultiTargetBuilds(options: {
 	/**
 	 * Task name to be defined e.g. "html", "styles" which then will generate tasks as following:
-	 * compile:styles | compile:styles:dev | compile:styles:TARGET etc... (compile:styles:es2015).
+	 * compile:styles (all) | compile:styles:dev (dev target) | compile:styles:TARGET etc... (compile:styles:es2015).
 	 *
 	 * @type {string}
 	 */
@@ -50,7 +50,7 @@ export function registerGulpMultiTargetBuilds(options: {
 		config should have 'devTarget' should also be defined in 'buildTargets'!`));
 		return;
 	}
-	gulp.task(`compile:${taskName}:dev`, [`compile:html:${config.devTarget}`]);
+	gulp.task(`compile:${taskName}:dev`, [`compile:${taskName}:${config.devTarget}`]);
 	gulp.task(`compile:${taskName}`, config.buildTargets.map(x => `compile:${taskName}:${x}`));
 	for (let target of config.buildTargets) {
 		gulp.task(`compile:${taskName}:${target}`, () => action(target));
