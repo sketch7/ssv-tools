@@ -26,16 +26,16 @@ In order to contribute please read the [Contribution guidelines][contribWiki].
 
 [Change logs][changeLog] | [Project Repository][projectUri] | [Contribution guidelines][contribWiki]
 
-# Installation
+## Installation
 
 Get library via [npm]
 ```bash
 npm install @ssv/tools --save
 ```
 
-# Usage
+## Usage
 
-## API
+### API
 
 ```ts
 import { compileTsc, rollup } from "@ssv/tools";
@@ -51,7 +51,7 @@ compileTsc({
 rollup({ continueOnError: args.continueOnError });
 ```
 
-### gulp utils
+#### gulp utils
 ```ts
 import { setGulpContext, registerGulpMultiTargetBuilds } from "@ssv/tools";
 import gulp from "gulp";
@@ -76,7 +76,7 @@ registerGulpMultiTargetBuilds({
 ```
 
 
-### ES5
+#### ES5
 for usage with es5, use as following:
 
 ```ts
@@ -84,16 +84,16 @@ const ssvTools = require("@ssv/tools");
 ssvTools.compileTsc(...);
 ```
 
-## Base configs
+### Base configs
 
-### eslint
+#### eslint
 ```json
 {
     "extends": "./node_modules/@ssv/tools/base.eslintrc"
 }
 ```
 
-### tslint
+#### tslint
 ```json
 {
     "extends": [
@@ -102,16 +102,16 @@ ssvTools.compileTsc(...);
 }
 ```
 
-### tsconfig
+#### tsconfig
 ```json
 {
     "extends": "./node_modules/@ssv/tools/tsconfig.base.json"
 }
 ```
 
-# Getting Started
+## Getting Started
 
-## Setup Machine for Development
+### Setup Machine for Development
 Install/setup the following:
 
 - NodeJS v6+
@@ -126,13 +126,13 @@ npm install -g git gulp karma-cli
 ```
 
 
-### Cloning Repo
+#### Cloning Repo
 
 - Run `git clone https://github.com/sketch7/ssv-tools.git`
 - Switch to `develop` branch
 
 
-## Project Setup
+### Project Setup
 The following process need to be executed in order to get started.
 
 ```bash
@@ -140,7 +140,7 @@ npm install
 ```
 
 
-## Building the code
+### Building the code
 
 ```
 npm run build
