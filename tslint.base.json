@@ -113,12 +113,12 @@
 		],
 		"radix": true,
 		"semicolon": [
-			"always",
-			true
+			true,
+			"always"
 		],
 		"space-before-function-paren": [
-			"never",
-			true
+			true,
+			"never"
 		],
 		"trailing-comma": [
 			{
