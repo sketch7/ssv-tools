@@ -69,7 +69,7 @@
 			true
 		],
 		"no-invalid-this": true,
-		"no-magic-numbers": true,
+		"no-magic-numbers": false,
 		"no-shadowed-variable": true,
 		"no-string-literal": true,
 		"no-string-throw": true,
@@ -146,7 +146,6 @@
 		"whitespace": [
 			"check-branch",
 			"check-decl",
-			"check-module",
 			"check-operator",
 			"check-separator",
 			"check-type",
