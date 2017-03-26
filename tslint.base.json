@@ -49,8 +49,8 @@
 		"no-bitwise": true,
 		// "no-boolean-literal-compare": false,
 		"no-consecutive-blank-lines": [
-			2,
-			true
+			true,
+			2
 		],
 		"no-console": [
 			"debug",
