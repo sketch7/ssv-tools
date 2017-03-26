@@ -9,6 +9,8 @@
     "utils"
   ],
   "scripts": {
+    "start": "tsc -p tsconfig.json -w",
+    "watch": "npm start",
     "lint": "tslint --project tsconfig.json -t stylish",
     "prebuild": "rimraf dist && npm run lint",
     "build": "tsc -p tsconfig.json",
