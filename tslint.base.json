@@ -1,47 +1,47 @@
 {
 	"rules": {
 		"align": [
+			true,
 			"arguments",
 			"parameters",
-			"statements",
-			true
+			"statements"
 		],
 		"array-type": [
-			"array-simple",
-			true
+			true,
+			"array-simple"
 		],
 		"arrow-parens": [
 			true,
 			"ban-single-arg-parens"
 		],
 		"arrow-return-shorthand": [
-			"multiline",
-			true
+			true,
+			"multiline"
 		],
 		"class-name": true,
 		"comment-format": [
-			"check-space",
-			true
+			true,
+			"check-space"
 		],
 		"curly": true,
 		"eofline": false,
 		"forin": true,
 		"import-spacing": true,
 		"indent": [
-			"tabs",
-			true
+			true,
+			"tabs"
 		],
 		"interface-over-type-literal": true,
 		"label-position": true,
 		"max-line-length": [
-			140,
-			true
+			true,
+			140
 		],
 		"member-access": false,
 		"member-ordering": [
+			true,
 			"public-before-private",
 			"static-before-instance",
-			true,
 			"variables-before-functions"
 		],
 		"no-angle-bracket-type-assertion": true,
@@ -53,12 +53,12 @@
 			2
 		],
 		"no-console": [
+			true,
 			"debug",
 			"info",
 			"time",
 			"timeEnd",
-			"trace",
-			true
+			"trace"
 		],
 		"no-construct": true,
 		"no-debugger": true,
@@ -78,26 +78,26 @@
 		"no-unnecessary-initializer": true,
 		"no-unused-expression": true,
 		"no-unused-variable": [
+			true,
 			{
 				"ignore-pattern": "^_"
 			},
-			"check-parameters",
-			true
+			"check-parameters"
 		],
 		"no-use-before-declare": true,
 		"no-var-keyword": true,
 		"object-literal-key-quotes": [
-			"as-needed",
-			true
+			true,
+			"as-needed"
 		],
 		"object-literal-shorthand": true,
 		"object-literal-sort-keys": false,
 		"one-line": [
+			true,
 			"check-catch",
 			"check-else",
 			"check-open-brace",
-			"check-whitespace",
-			true
+			"check-whitespace"
 		],
 		"only-arrow-functions": [
 			"allow-declarations",
@@ -108,8 +108,8 @@
 		"prefer-for-of": true,
 		"prefer-method-signature": false,
 		"quotemark": [
-			"double",
-			true
+			true,
+			"double"
 		],
 		"radix": true,
 		"semicolon": [
@@ -121,36 +121,36 @@
 			"never"
 		],
 		"trailing-comma": [
+			false,
 			{
 				"multiline": "never",
 				"singleline": "never"
-			},
-			false
+			}
 		],
 		"triple-equals": [
-			"allow-null-check",
-			true
+			true,
+			"allow-null-check"
 		],
 		"typedef-whitespace": [
+			true,
 			{
 				"call-signature": "nospace",
 				"index-signature": "nospace",
 				"parameter": "nospace",
 				"property-declaration": "nospace",
 				"variable-declaration": "nospace"
-			},
-			true
+			}
 		],
 		"use-isnan": true,
 		"variable-name": false,
 		"whitespace": [
+			true,
 			"check-branch",
 			"check-decl",
 			"check-operator",
 			"check-separator",
 			"check-type",
 			"check-typecast",
-			true
 		]
 	}
 }
