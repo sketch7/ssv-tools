@@ -127,7 +127,7 @@
 			"always"
 		],
 		"space-before-function-paren": [
-			true,
+			false, // disabled due to: https://github.com/palantir/tslint/issues/2308
 			"never"
 		],
 		"trailing-comma": [
