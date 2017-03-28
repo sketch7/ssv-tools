@@ -1,6 +1,6 @@
-const spawn = require("cross-spawn-promise");
-const fs = require("fs");
-const path = require("path");
+import * as spawn from "cross-spawn-promise";
+import * as fs from "fs";
+import * as path from "path";
 import * as chalk from "chalk";
 
 /**
@@ -8,7 +8,7 @@ import * as chalk from "chalk";
  */
 export function compileTsc(opts: {
 	module: string, configPath: string, continueOnError: boolean
-}): Promise<any> {
+}): Promise<Uint8Array> {
 	const args = [
 		"-p",
 		opts.configPath || "./tsconfig.json",
@@ -23,12 +23,9 @@ export function compileTsc(opts: {
 
 	const commandPath = getLocalDepOrRoot("node_modules/.bin/tsc");
 	return spawn(commandPath, args, { stdio: "inherit" })
-		.catch((error: any) => {
-			if (!error) {
-				return;
-			}
+		.catch((error: spawn.CrossSpawnError) => {
 			console.error(chalk.red("[compileTsc] failed!"));
-			console.error(chalk.red(error.stderr ? error.stderr.toString() : error));
+			console.error(chalk.red(error.stderr.toString()));
 			if (!opts.continueOnError) {
 				process.exit(1);
 			}
@@ -40,7 +37,7 @@ export function compileTsc(opts: {
  */
 export function rollup(opts: {
 	configPath: string, continueOnError: boolean
-}): Promise<any> {
+}): Promise<Uint8Array> {
 	const args = [
 		"-c",
 		opts.configPath || "./rollup.config.js",
@@ -49,12 +46,9 @@ export function rollup(opts: {
 
 	const commandPath = getLocalDepOrRoot("node_modules/.bin/rollup");
 	return spawn(commandPath, args, { stdio: "inherit" })
-		.catch((error: any) => {
-			if (!error) {
-				return;
-			}
+		.catch((error: spawn.CrossSpawnError) => {
 			console.error(chalk.red("[rollup] failed!"));
-			console.error(chalk.red(error.stderr ? error.stderr.toString() : error));
+			console.error(chalk.red(error.stderr.toString()));
 			if (!opts.continueOnError) {
 				process.exit(1);
 			}

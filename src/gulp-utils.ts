@@ -6,7 +6,7 @@ let _gulp: gulp.Gulp;
 function getGulp(): gulp.Gulp {
 	if (!_gulp) {
 		console.error(chalk.red(`gulp is not set! First invoke 'setGulpContext'.`));
-		throw "gulp is undefined";
+		throw new Error("gulp is undefined");
 	}
 	return _gulp;
 }
@@ -35,7 +35,7 @@ export function registerGulpMultiTargetBuilds(options: {
 	action: (target: string) => Promise<any>,
 	config: { devTarget: string, buildTargets: string[] }
 }) {
-	const {taskName, config, action} = options;
+	const { taskName, config, action } = options;
 	const gulp = getGulp();
 	if (!config.devTarget) {
 		console.error(chalk.red(`${registerGulpMultiTargetBuilds.name} - config should have 'devTarget' defined!`));
@@ -52,7 +52,7 @@ export function registerGulpMultiTargetBuilds(options: {
 	}
 	gulp.task(`compile:${taskName}:dev`, [`compile:${taskName}:${config.devTarget}`]);
 	gulp.task(`compile:${taskName}`, config.buildTargets.map(x => `compile:${taskName}:${x}`));
-	for (let target of config.buildTargets) {
+	for (const target of config.buildTargets) {
 		gulp.task(`compile:${taskName}:${target}`, () => action(target));
 	}
-}
+};
