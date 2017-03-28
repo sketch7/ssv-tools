@@ -1,8 +1,7 @@
 node_modules
-jspm_packages
-bower_components
 .idea
-.log
+*.log
+*.tgz
 
 _artifact
 dist

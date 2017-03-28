@@ -1,9 +1,22 @@
 {
 	"rules": {
-		"arrow-parens": false,
+		"align": [
+			true,
+			"arguments",
+			"parameters",
+			"statements"
+		],
 		"array-type": [
 			true,
-			"array-simple"
+			"array"
+		],
+		"arrow-parens": [
+			true,
+			"ban-single-arg-parens"
+		],
+		"arrow-return-shorthand": [
+			true,
+			"multiline"
 		],
 		"class-name": true,
 		"comment-format": [
@@ -13,10 +26,12 @@
 		"curly": true,
 		"eofline": false,
 		"forin": true,
+		"import-spacing": true,
 		"indent": [
 			true,
 			"tabs"
 		],
+		"interface-over-type-literal": true,
 		"label-position": true,
 		"max-line-length": [
 			true,
@@ -25,12 +40,28 @@
 		"member-access": false,
 		"member-ordering": [
 			true,
-			"public-before-private",
-			"static-before-instance",
-			"variables-before-functions"
+			"public-static-field",
+			"protected-static-field",
+			"private-static-field",
+			"public-instance-field",
+			"protected-instance-field",
+			"private-instance-field",
+			"constructor",
+			"public-static-method",
+			"protected-static-method",
+			"private-static-method",
+			"public-instance-method",
+			"protected-instance-method",
+			"private-instance-method"
 		],
+		"no-angle-bracket-type-assertion": true,
 		"no-arg": true,
 		"no-bitwise": true,
+		// "no-boolean-literal-compare": false,
+		"no-consecutive-blank-lines": [
+			true,
+			2
+		],
 		"no-console": [
 			true,
 			"debug",
@@ -47,33 +78,45 @@
 		"no-inferrable-types": [
 			true
 		],
+		"no-invalid-this": true,
+		"no-magic-numbers": false,
 		"no-shadowed-variable": true,
 		"no-string-literal": true,
+		"no-string-throw": true,
 		"no-switch-case-fall-through": true,
-		"trailing-comma": [
-			false,
-			{
-				"singleline": "never",
-				"multiline": "never"
-			}
-		],
 		"no-trailing-whitespace": true,
+		"no-unnecessary-initializer": true,
 		"no-unused-expression": true,
+		"no-unused-variable": [
+			true,
+			{
+				"ignore-pattern": "^_"
+			},
+			"check-parameters"
+		],
 		"no-use-before-declare": true,
 		"no-var-keyword": true,
+		"object-literal-key-quotes": [
+			true,
+			"as-needed"
+		],
+		"object-literal-shorthand": true,
 		"object-literal-sort-keys": false,
 		"one-line": [
 			true,
-			"check-open-brace",
 			"check-catch",
 			"check-else",
+			"check-open-brace",
 			"check-whitespace"
 		],
 		"only-arrow-functions": [
 			true,
-			"allow-declarations"
+			"allow-declarations",
+			"allow-named-functions"
 		],
+		"prefer-const": true,
 		"prefer-for-of": true,
+		"prefer-method-signature": false,
 		"quotemark": [
 			true,
 			"double"
@@ -82,6 +125,17 @@
 		"semicolon": [
 			true,
 			"always"
+		],
+		"space-before-function-paren": [
+			false, // disabled due to: https://github.com/palantir/tslint/issues/2308
+			"never"
+		],
+		"trailing-comma": [
+			false,
+			{
+				"multiline": "never",
+				"singleline": "never"
+			}
 		],
 		"triple-equals": [
 			true,
@@ -97,15 +151,16 @@
 				"variable-declaration": "nospace"
 			}
 		],
+		"use-isnan": true,
 		"variable-name": false,
 		"whitespace": [
 			true,
 			"check-branch",
 			"check-decl",
 			"check-operator",
-			"check-module",
 			"check-separator",
-			"check-type"
+			"check-type",
+			"check-typecast"
 		]
 	}
 }

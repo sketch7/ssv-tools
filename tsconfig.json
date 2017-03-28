@@ -9,7 +9,11 @@
 		"lib": [
 			"es2015"
 		],
-		"outDir": "dist/commonjs"
+		"outDir": "dist/commonjs",
+		"baseUrl": ".",
+		"paths": {
+			"cross-spawn-promise": ["typings/cross-spawn-promise"]
+		}
 	},
 	"include": [
 		"src/**/*"
