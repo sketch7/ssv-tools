@@ -28,6 +28,7 @@
     "@types/chalk": "^0.4.31",
     "@types/gulp": "^4.0.2",
     "@types/node": "^7.0.0",
+    "gulp": "^3.9.1",
     "require-dir": "^0.3.1",
     "rimraf": "^2.5.4",
     "tslint": "^5.0.0",
