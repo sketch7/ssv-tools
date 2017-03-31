@@ -30,7 +30,7 @@
     "@types/node": "^7.0.0",
     "require-dir": "^0.3.1",
     "rimraf": "^2.5.4",
-    "tslint": "^4.0.0",
+    "tslint": "^5.0.0",
     "yargs": "^7.0.2"
   },
   "dependencies": {
