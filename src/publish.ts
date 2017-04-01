@@ -1,10 +1,22 @@
 import * as simpleGit from "simple-git/promise";
+import * as spawn from "cross-spawn-promise";
+import * as chalk from "chalk";
 
-// todo: rename publisher?
-export async function magicPublish($args: {
-	publishFn?: () => Promise<void>
+
+/**
+ * Perform auto-publishing sequence.
+ * - checkout `master`
+ * - merge from `develop`
+ * - perform publish (can be overriden) via `publishFn`
+ * - downmerge `master` to `develop`
+ *
+ * @param $args arguments to be passed.
+ */
+export async function publisher($args: {
+	publishFn?: (bump: string) => Promise<void>,
+	bump: string
 }) {
-	const args = { publishFn: performPublish, ...$args };
+	const args = { publishFn: performGulpPublish, ...$args };
 	const git = simpleGit();
 
 	await mergeLatest({
@@ -13,7 +25,7 @@ export async function magicPublish($args: {
 		to: "master"
 	});
 
-	await args.publishFn();
+	await args.publishFn(args.bump);
 
 	await mergeLatest({
 		git,
@@ -22,8 +34,27 @@ export async function magicPublish($args: {
 	});
 }
 
-async function performPublish() {
-	throw new Error("performPublish not implemented");
+async function performGulpPublish(bump: string): Promise<void> {
+	if (!bump) {
+		throw Error(`[performGulpPublish] bump was not specified!`);
+	}
+
+	const cmds = [
+		"publish",
+		"--rel",
+		"--bump",
+		bump
+	];
+	try {
+		const result = await spawn("gulp", cmds);
+		console.log(chalk.green("[performGulpPublish] success!"));
+		console.log(result.toString());
+	} catch (e) {
+		const error: spawn.CrossSpawnError = e;
+		console.error(chalk.red("[performGulpPublish] failed!"));
+		console.error(chalk.red(error.stderr.toString()));
+		throw e;
+	}
 }
 
 async function mergeLatest($args: {
@@ -41,5 +72,5 @@ async function mergeLatest($args: {
 	const mergeFromToResult = await git.mergeFromTo(from, to);
 	console.log("[mergeLatest] mergeFromToResult", mergeFromToResult);
 
-	// await git.push();
+	await git.push();
 }
