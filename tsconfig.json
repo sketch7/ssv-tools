@@ -11,7 +11,9 @@
 		],
 		"outDir": "dist/commonjs",
 		"baseUrl": ".",
-		"paths": {}
+		"paths": {
+			"simple-git/promise": ["typings/simple-git/promise"]
+		}
 	},
 	"include": [
 		"src/**/*"
