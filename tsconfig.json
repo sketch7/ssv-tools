@@ -11,9 +11,7 @@
 		],
 		"outDir": "dist/commonjs",
 		"baseUrl": ".",
-		"paths": {
-			"cross-spawn-promise": ["typings/cross-spawn-promise"]
-		}
+		"paths": {}
 	},
 	"include": [
 		"src/**/*"
