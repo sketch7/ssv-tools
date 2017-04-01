@@ -12,7 +12,6 @@
 		"outDir": "dist/commonjs",
 		"baseUrl": ".",
 		"paths": {
-			"cross-spawn-promise": ["typings/cross-spawn-promise"],
 			"simple-git/promise": ["typings/simple-git/promise"]
 		}
 	},

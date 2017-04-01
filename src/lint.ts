@@ -14,8 +14,7 @@ import {
 	// sass
 	lintSass,
 	LintSassOptions,
-	LINT_SASS_FORMATTERS,
-	LintSassFormatters,
+	LINT_SASS_FORMATTERS
 } from "@speedy/build-tools";
 
 export {
@@ -35,5 +34,4 @@ export {
 	lintSass,
 	LintSassOptions,
 	LINT_SASS_FORMATTERS,
-	LintSassFormatters,
-}
+};

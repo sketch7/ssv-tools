@@ -55,4 +55,4 @@ export function registerGulpMultiTargetBuilds(options: {
 	for (const target of config.buildTargets) {
 		gulp.task(`compile:${taskName}:${target}`, () => action(target));
 	}
-};
+}
