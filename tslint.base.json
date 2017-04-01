@@ -1,11 +1,5 @@
 {
 	"rules": {
-		"align": [
-			true,
-			"arguments",
-			"parameters",
-			"statements"
-		],
 		"array-type": [
 			true,
 			"array"
