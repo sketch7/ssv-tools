@@ -6,9 +6,9 @@ import * as chalk from "chalk";
 /**
  * Compiles TypeScript via CLI.
  */
-export function compileTsc(opts: {
+export async function compileTsc(opts: {
 	module: string, configPath: string, continueOnError: boolean
-}): Promise<Uint8Array> {
+}): Promise<void> {
 	const args = [
 		"-p",
 		opts.configPath || "./tsconfig.json",
@@ -22,22 +22,26 @@ export function compileTsc(opts: {
 	console.log(chalk.blue(`compile tsc (${opts.module})...`));
 
 	const commandPath = getLocalDepOrRoot("node_modules/.bin/tsc");
-	return spawn(commandPath, args, { stdio: "inherit" })
-		.catch((error: spawn.CrossSpawnError) => {
-			console.error(chalk.red("[compileTsc] failed!"));
+	try {
+		await spawn(commandPath, args, { stdio: "inherit" });
+	} catch (e) {
+		const error: spawn.CrossSpawnError = e;
+		console.error(chalk.red("[rollup] failed!"));
+		if (error.stderr) {
 			console.error(chalk.red(error.stderr.toString()));
-			if (!opts.continueOnError) {
-				process.exit(1);
-			}
-		});
+		}
+		if (!opts.continueOnError) {
+			process.exit(1);
+		}
+	}
 }
 
 /**
  * Rollup via CLI.
  */
-export function rollup(opts: {
+export async function rollup(opts: {
 	configPath: string, continueOnError: boolean
-}): Promise<Uint8Array> {
+}): Promise<void> {
 	const args = [
 		"-c",
 		opts.configPath || "./rollup.config.js",
@@ -45,14 +49,19 @@ export function rollup(opts: {
 	console.log(chalk.blue(`rollup...`));
 
 	const commandPath = getLocalDepOrRoot("node_modules/.bin/rollup");
-	return spawn(commandPath, args, { stdio: "inherit" })
-		.catch((error: spawn.CrossSpawnError) => {
-			console.error(chalk.red("[rollup] failed!"));
+
+	try {
+		await spawn(commandPath, args, { stdio: "inherit" });
+	} catch (e) {
+		const error: spawn.CrossSpawnError = e;
+		console.error(chalk.red("[rollup] failed!"));
+		if (error.stderr) {
 			console.error(chalk.red(error.stderr.toString()));
-			if (!opts.continueOnError) {
-				process.exit(1);
-			}
-		});
+		}
+		if (!opts.continueOnError) {
+			process.exit(1);
+		}
+	}
 }
 
 function getLocalDepOrRoot(file: string): string {
