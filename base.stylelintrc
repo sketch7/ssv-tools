@@ -8,6 +8,19 @@
 		"scss/selector-no-redundant-nesting-selector": true,
 		"scss/at-extend-no-missing-placeholder": true,
 		"scss/at-mixin-argumentless-call-parentheses": "never",
+		"at-rule-empty-line-before": [
+			"always",
+			{
+				"except": [
+					"blockless-group",
+					"first-nested"
+				],
+				"ignore": [
+					"after-comment",
+					"inside-block"
+				]
+			}
+		],
 		"at-rule-name-case": "lower",
 		"at-rule-name-space-after": "always-single-line",
 		"block-closing-brace-empty-line-before": "never",
@@ -57,6 +70,12 @@
 		"function-parentheses-newline-inside": "always-multi-line",
 		"function-parentheses-space-inside": "never-single-line",
 		"function-whitespace-after": "always",
+		"indentation": [
+			"tab",
+			{
+				"indentClosingBrace": false
+			}
+		],
 		"max-empty-lines": 1,
 		"max-nesting-depth": [
 			3,
