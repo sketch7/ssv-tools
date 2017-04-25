@@ -35,7 +35,7 @@
     "yargs": "^7.0.2"
   },
   "dependencies": {
-    "@speedy/build-tools": "^0.2.0",
+    "@speedy/build-tools": "^0.3.0",
     "chalk": "^1.1.3",
     "cross-spawn-promise": "^0.10.1",
     "rollup": "^0.41.6",
