@@ -14,7 +14,7 @@
     "lint": "tslint --project tsconfig.json -t stylish",
     "prebuild": "rimraf dist && npm run lint",
     "build": "tsc -p tsconfig.json",
-    "test": "echo i don't have tests...",
+    "test": "echo no tests available...",
     "magic-publish": "git checkout master && git pull && git merge develop && git push && npm run build && npm version minor && npm publish && git push --follow-tags && git checkout develop && git merge master && git push"
   },
   "author": "Stephen Lautier <stephen.lautier@outlook.com>",
