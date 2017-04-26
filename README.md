@@ -8,8 +8,7 @@
 [npm]: https://www.npmjs.com
 
 # ssv-tools
-[![Build status](https://ci.appveyor.com/api/projects/status/2e0an5hvxtfs08mf?svg=true)](https://ci.appveyor.com/project/chiko/ssv-tools)
-[![Build status](https://ci.appveyor.com/api/projects/status/2e0an5hvxtfs08mf/branch/master?svg=true)](https://ci.appveyor.com/project/chiko/ssv-tools/branch/master)
+[![CircleCI](https://circleci.com/gh/sketch7/ssv-tools.svg?style=svg)](https://circleci.com/gh/sketch7/ssv-tools)
 [![bitHound Overall Score](https://www.bithound.io/github/sketch7/ssv-tools/badges/score.svg)](https://www.bithound.io/github/sketch7/ssv-tools)
 [![npm version](https://badge.fury.io/js/%40ssv%2Ftools.svg)](https://badge.fury.io/js/%40ssv%2Ftools)
 
