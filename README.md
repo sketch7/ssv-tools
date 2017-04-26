@@ -8,7 +8,7 @@
 [npm]: https://www.npmjs.com
 
 # ssv-tools
-[![CircleCI](https://circleci.com/gh/sketch7/ssv-tools.svg?style=svg)](https://circleci.com/gh/sketch7/ssv-tools)
+[![CircleCI](https://circleci.com/gh/sketch7/ssv-tools.svg?style=shield)](https://circleci.com/gh/sketch7/ssv-tools)
 [![bitHound Overall Score](https://www.bithound.io/github/sketch7/ssv-tools/badges/score.svg)](https://www.bithound.io/github/sketch7/ssv-tools)
 [![npm version](https://badge.fury.io/js/%40ssv%2Ftools.svg)](https://badge.fury.io/js/%40ssv%2Ftools)
 
