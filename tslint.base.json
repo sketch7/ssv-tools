@@ -161,8 +161,8 @@
 			"check-decl",
 			"check-operator",
 			"check-separator",
-			"check-type",
-			"check-typecast"
+			"check-type"
+			// ,"check-typecast" // causing issues
 		]
 	}
 }

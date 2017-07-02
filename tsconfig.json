@@ -9,6 +9,7 @@
 		"lib": [
 			"es2015"
 		],
+		"skipLibCheck": true,
 		"outDir": "dist/commonjs",
 		"baseUrl": ".",
 		"paths": {
