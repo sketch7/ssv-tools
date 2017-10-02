@@ -37,11 +37,11 @@
   },
   "dependencies": {
     "@speedy/build-tools": "^0.3.0",
-    "chalk": "^2.0.1",
+    "chalk": "^2.1.0",
     "cross-spawn-promise": "^0.10.1",
     "rollup": "^0.41.6",
-    "simple-git": "^1.69.0",
-    "typescript": "^2.4.0"
+    "simple-git": "^1.77.0",
+    "typescript": "^2.5.3"
   },
   "peerDependencies": {
     "gulp": "^3.9.1"
