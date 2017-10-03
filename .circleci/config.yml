@@ -4,6 +4,10 @@ jobs:
     working_directory: /app
     docker:
       - image: node:8.6.0
+    branches:
+      only:
+        - master
+        - /.*/
     steps:
       - run:
           name: Print environment versions
