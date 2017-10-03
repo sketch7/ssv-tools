@@ -1,6 +1,6 @@
 {
   "name": "@ssv/tools",
-  "version": "0.6.10",
+  "version": "0.6.11",
   "description": "tools and utilities used for builds and develop sketch7 (ssv) libraries.",
   "keywords": [
     "sketch7",
