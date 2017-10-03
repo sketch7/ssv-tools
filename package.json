@@ -1,6 +1,6 @@
 {
   "name": "@ssv/tools",
-  "version": "0.6.9",
+  "version": "0.6.10",
   "description": "tools and utilities used for builds and develop sketch7 (ssv) libraries.",
   "keywords": [
     "sketch7",
@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "@types/chalk": "^0.4.31",
-    "@types/gulp": "4.0.4",
+    "@types/gulp": "4.0.2",
     "@types/node": "^8.0.31",
     "gulp": "^3.9.1",
     "require-dir": "^0.3.2",
