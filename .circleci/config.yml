@@ -4,9 +4,9 @@ jobs:
     working_directory: /app
     docker:
       - image: circleci/node:8.6.0
-  branches:
-    only:
-      - master
+    branches:
+      only:
+        - master
     steps:
       - run:
           name: Print environment versions
