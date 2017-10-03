@@ -1,6 +1,6 @@
 {
   "name": "@ssv/tools",
-  "version": "0.6.7",
+  "version": "0.6.8",
   "description": "tools and utilities used for builds and develop sketch7 (ssv) libraries.",
   "keywords": [
     "sketch7",
@@ -26,19 +26,19 @@
   },
   "devDependencies": {
     "@types/chalk": "^0.4.31",
-    "@types/gulp": "4.0.2",
-    "@types/node": "^8.0.7",
+    "@types/gulp": "4.0.4",
+    "@types/node": "^8.0.31",
     "gulp": "^3.9.1",
-    "require-dir": "^0.3.1",
-    "rimraf": "^2.5.4",
-    "tslint": "^5.4.3",
-    "yargs": "^8.0.2"
+    "require-dir": "^0.3.2",
+    "rimraf": "^2.6.2",
+    "tslint": "^5.7.0",
+    "yargs": "^9.0.1"
   },
   "dependencies": {
-    "@speedy/build-tools": "^0.3.0",
+    "@speedy/build-tools": "^0.4.2",
     "chalk": "^2.1.0",
     "cross-spawn-promise": "^0.10.1",
-    "rollup": "^0.41.6",
+    "rollup": "^0.50.0",
     "simple-git": "^1.77.0",
     "typescript": "^2.5.3"
   },

@@ -1,9 +1,9 @@
 import * as chalk from "chalk";
-import * as gulp from "gulp";
+import * as gulpRunner from "gulp";
 
-let _gulp: gulp.Gulp;
+let _gulp: gulpRunner.Gulp;
 
-function getGulp(): gulp.Gulp {
+function getGulp(): gulpRunner.Gulp {
 	if (!_gulp) {
 		console.error(chalk.red(`gulp is not set! First invoke 'setGulpContext'.`));
 		throw new Error("gulp is undefined");
@@ -17,7 +17,7 @@ function getGulp(): gulp.Gulp {
  * @export
  * @param {gulp.Gulp} gulp
  */
-export function setGulpContext(gulp: gulp.Gulp): void {
+export function setGulpContext(gulp: gulpRunner.Gulp): void {
 	_gulp = gulp;
 }
 
@@ -50,8 +50,8 @@ export function registerGulpMultiTargetBuilds(options: {
 		config should have 'devTarget' should also be defined in 'buildTargets'!`));
 		return;
 	}
-	gulp.task(`compile:${taskName}:dev`, [`compile:${taskName}:${config.devTarget}`]);
-	gulp.task(`compile:${taskName}`, config.buildTargets.map(x => `compile:${taskName}:${x}`));
+	gulp.task(`compile:${taskName}:dev`, () => [`compile:${taskName}:${config.devTarget}`]);
+	gulp.task(`compile:${taskName}`, () => config.buildTargets.map(x => `compile:${taskName}:${x}`));
 	for (const target of config.buildTargets) {
 		gulp.task(`compile:${taskName}:${target}`, () => action(target));
 	}
