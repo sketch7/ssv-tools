@@ -1,4 +1,10 @@
 {
+	"parserOptions": {
+		"ecmaVersion": 6
+	},
+	"env": {
+		"browser": false
+	},
 	"rules": {
 		"no-trailing-spaces": "warn",
 		"comma-dangle": "off",
@@ -10,8 +16,5 @@
 			"warn",
 			"smart-tabs"
 		]
-	},
-	"env": {
-		"browser": false
 	}
 }
