@@ -1,6 +1,6 @@
 {
   "name": "@ssv/tools",
-  "version": "0.6.11",
+  "version": "0.6.12",
   "description": "tools and utilities used for builds and develop sketch7 (ssv) libraries.",
   "keywords": [
     "sketch7",
@@ -27,7 +27,7 @@
   "devDependencies": {
     "@types/chalk": "^0.4.31",
     "@types/gulp": "4.0.2",
-    "@types/node": "^8.0.31",
+    "@types/node": "^8.0.33",
     "gulp": "^3.9.1",
     "require-dir": "^0.3.2",
     "rimraf": "^2.6.2",
@@ -39,7 +39,7 @@
     "chalk": "^2.1.0",
     "cross-spawn-promise": "^0.10.1",
     "rollup": "^0.50.0",
-    "simple-git": "^1.77.0",
+    "simple-git": "^1.79.0",
     "typescript": "^2.5.3"
   },
   "peerDependencies": {
