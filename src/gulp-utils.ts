@@ -50,9 +50,10 @@ export function registerGulpMultiTargetBuilds(options: {
 		config should have 'devTarget' should also be defined in 'buildTargets'!`));
 		return;
 	}
-	gulp.task(`compile:${taskName}:dev`, gulp.series([`compile:${taskName}:${config.devTarget}`]));
-	gulp.task(`compile:${taskName}`, gulp.parallel(config.buildTargets.map(x => `compile:${taskName}:${x}`)));
+
 	for (const target of config.buildTargets) {
 		gulp.task(`compile:${taskName}:${target}`, () => action(target));
 	}
+	gulp.task(`compile:${taskName}:dev`, gulp.series([`compile:${taskName}:${config.devTarget}`]));
+	gulp.task(`compile:${taskName}`, gulp.parallel(config.buildTargets.map(x => `compile:${taskName}:${x}`)));
 }
