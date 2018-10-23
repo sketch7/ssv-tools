@@ -1,13 +1,13 @@
 [projectUri]: https://github.com/sketch7/ssv-tools
 [projectGit]: https://github.com/sketch7/ssv-tools.git
-[changeLog]: ./doc/CHANGELOG.md
+[changeLog]: ./CHANGELOG.md
 
-[contribWiki]: ./doc/CONTRIBUTION.md
-[releaseWorkflowWiki]: ./doc/RELEASE-WORKFLOW.md
+[contribWiki]: ./docs/CONTRIBUTION.md
+[releaseWorkflowWiki]: ./docs/RELEASE-WORKFLOW.md
 
 [npm]: https://www.npmjs.com
 
-# ssv-tools
+# @ssv/tools
 [![CircleCI](https://circleci.com/gh/sketch7/ssv-tools.svg?style=shield)](https://circleci.com/gh/sketch7/ssv-tools)
 [![npm version](https://badge.fury.io/js/%40ssv%2Ftools.svg)](https://badge.fury.io/js/%40ssv%2Ftools)
 
@@ -128,7 +128,7 @@ Install/setup the following:
 
 
 ```bash
-npm install -g git gulp karma-cli
+npm install -g git gulp
 ```
 
 
@@ -147,6 +147,6 @@ npm install
 
 ### Building the code
 
-```
+```bash
 npm run build
 ```
