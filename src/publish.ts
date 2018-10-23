@@ -1,6 +1,6 @@
 import * as simpleGit from "simple-git/promise";
 import * as spawn from "cross-spawn-promise";
-import * as chalk from "chalk";
+import chalk from "chalk";
 
 /**
  * Perform auto-publishing sequence.

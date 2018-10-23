@@ -1,9 +1,9 @@
 version: 2
 jobs:
   build:
-    working_directory: /app
+    working_directory: ~/repo
     docker:
-      - image: node:8.6.0
+      - image: circleci/node:10.4
     steps:
       - run:
           name: Print environment versions
@@ -12,10 +12,14 @@ jobs:
             echo npm version':' $NPM_V
       - checkout
       - run:
+          name: NPM Auth
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
+      - run:
           name: Package Install
-          command: |
-            echo -e "$NPM_USER\n$NPM_PWD\n$NPM_EMAIL" | npm login --scope=@ssv
-            npm i
+          command: npm ci
+      - run:
+          name: lint
+          command: npm run lint
       - run:
           name: build
           command: npm run build
@@ -30,8 +34,10 @@ jobs:
               exit
             fi
             . ./.circleci/utils.sh
-
+           
             PACKAGE_VERSION=$(node -p "require('./package.json').version")
+            
+            print_title "publish..."
             npm publish
 
             print_title "git tag"

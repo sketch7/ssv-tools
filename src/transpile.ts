@@ -1,7 +1,7 @@
 import * as spawn from "cross-spawn-promise";
 import * as fs from "fs";
 import * as path from "path";
-import * as chalk from "chalk";
+import chalk from "chalk";
 
 /**
  * Compiles TypeScript via CLI.
