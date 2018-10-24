@@ -1,15 +1,14 @@
 [projectUri]: https://github.com/sketch7/ssv-tools
 [projectGit]: https://github.com/sketch7/ssv-tools.git
-[changeLog]: ./doc/CHANGELOG.md
+[changeLog]: ./CHANGELOG.md
 
-[contribWiki]: ./doc/CONTRIBUTION.md
-[releaseWorkflowWiki]: ./doc/RELEASE-WORKFLOW.md
+[contribWiki]: ./docs/CONTRIBUTION.md
+[releaseWorkflowWiki]: ./docs/RELEASE-WORKFLOW.md
 
 [npm]: https://www.npmjs.com
 
-# ssv-tools
+# @ssv/tools
 [![CircleCI](https://circleci.com/gh/sketch7/ssv-tools.svg?style=shield)](https://circleci.com/gh/sketch7/ssv-tools)
-[![bitHound Overall Score](https://www.bithound.io/github/sketch7/ssv-tools/badges/score.svg)](https://www.bithound.io/github/sketch7/ssv-tools)
 [![npm version](https://badge.fury.io/js/%40ssv%2Ftools.svg)](https://badge.fury.io/js/%40ssv%2Ftools)
 
 tools and utilities used for builds and develop sketch7 (ssv) libraries.
@@ -42,9 +41,9 @@ import { compileTsc, rollup } from "@ssv/tools";
 
 // compile typescript - execute typescript with cli.
 compileTsc({
-    module: "es2015",
-    configPath: "./tsconfig.build.json",
-    continueOnError: args.continueOnError
+  module: "es2015",
+  configPath: "./tsconfig.build.json",
+  continueOnError: args.continueOnError
 });
 
 // rollup - execute rollup with cli.
@@ -70,7 +69,7 @@ registerGulpMultiTargetBuilds({
             "amd",
             "umd"
         ],
-	    devTarget: "amd", 
+	    devTarget: "amd",
     }
 });
 ```
@@ -89,7 +88,7 @@ ssvTools.compileTsc(...);
 #### eslint
 ```json
 {
-    "extends": "./node_modules/@ssv/tools/base.eslintrc"
+    "extends": "./node_modules/@ssv/tools/config/.eslintrc"
 }
 ```
 
@@ -97,7 +96,7 @@ ssvTools.compileTsc(...);
 ```json
 {
     "extends": [
-        "./node_modules/@ssv/tools/tslint.base.json"
+        "./node_modules/@ssv/tools/config/tslint.json"
     ]
 }
 ```
@@ -105,14 +104,14 @@ ssvTools.compileTsc(...);
 #### tsconfig
 ```json
 {
-    "extends": "./node_modules/@ssv/tools/tsconfig.base.json"
+    "extends": "./node_modules/@ssv/tools/config/tsconfig.json"
 }
 ```
 
 #### stylelint
 ```json
 {
-    "extends": "./node_modules/@ssv/tools/base.stylelintrc"
+    "extends": "./node_modules/@ssv/tools/config/.stylelintrc"
 }
 ```
 
@@ -121,15 +120,15 @@ ssvTools.compileTsc(...);
 ### Setup Machine for Development
 Install/setup the following:
 
-- NodeJS v8+
+- NodeJS v10+
 - Visual Studio Code or similar code editor
-- TypeScript 2.5+
+- TypeScript 3.1+
 - Git + SourceTree, SmartGit or similar (optional)
 - Ensure to install **global NPM modules** using the following:
 
 
 ```bash
-npm install -g git gulp karma-cli
+npm install -g git gulp
 ```
 
 
@@ -148,6 +147,6 @@ npm install
 
 ### Building the code
 
-```
+```bash
 npm run build
 ```
