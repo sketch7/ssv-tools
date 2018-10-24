@@ -1,4 +1,11 @@
-## [1.1.1](https://github.com/sketch7/ssv-tools/compare/0.6.12...0.7.0) (2018-10-24)
+## [0.7.1](https://github.com/sketch7/ssv-tools/compare/0.7.0...0.7.1) (2018-10-25)
+
+### Bug Fixes
+
+- **configs:** several configs were being ignored in npm pack
+
+
+## [0.7.0](https://github.com/sketch7/ssv-tools/compare/0.6.12...0.7.0) (2018-10-24)
 
 ### Features
 
