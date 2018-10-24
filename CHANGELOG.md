@@ -1,4 +1,4 @@
-## [0.7.1](https://github.com/sketch7/ssv-tools/compare/0.6.12...0.7.1) (2018-10-25)
+## [0.7.1](https://github.com/sketch7/ssv-tools/compare/0.7.0...0.7.1) (2018-10-25)
 
 ### Bug Fixes
 
