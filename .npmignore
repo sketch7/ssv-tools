@@ -15,8 +15,12 @@ npm-debug.log
 *.tgz
 
 _artifact
-.eslintrc
-.stylelintrc
+/.eslintrc
+/tslint.json
+/.stylelintrc
+/tsconfig.json
+/tsconfig.build.json
+/tsconfig.test.json
 .editorconfig
 .gitignore
 .npmignore
@@ -27,11 +31,7 @@ karma.conf.js
 package-lock.json
 rollup.config.js
 system.config.js
-tslint.json
 typings.json
 wallaby.js
 yarn.lock
 CODEOWNERS
-/tsconfig.json
-/tsconfig.build.json
-/tsconfig.test.json
