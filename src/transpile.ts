@@ -1,6 +1,6 @@
-import * as spawn from "cross-spawn-promise";
-import * as fs from "fs";
-import * as path from "path";
+import spawn from "cross-spawn-promise";
+import fs from "fs";
+import path from "path";
 import chalk from "chalk";
 
 /**
