@@ -40,11 +40,11 @@ export async function compileTsc(opts: {
  * Rollup via CLI.
  */
 export async function rollup(opts: {
-	configPath: string, continueOnError: boolean
+	configPath: string, continueOnError: boolean, useTypeScriptConfig: boolean
 }): Promise<void> {
 	const args = [
 		"-c",
-		opts.configPath || "./rollup.config.js",
+		opts.configPath || opts.useTypeScriptConfig ? "./rollup.config.ts" : "./rollup.config.js",
 	];
 	console.log(chalk.blue(`rollup...`));
 
