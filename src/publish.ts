@@ -1,5 +1,5 @@
-import * as simpleGit from "simple-git/promise";
-import * as spawn from "cross-spawn-promise";
+import simpleGit from "simple-git/promise";
+import spawn from "cross-spawn-promise";
 import chalk from "chalk";
 
 /**

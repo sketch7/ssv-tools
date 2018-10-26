@@ -1,4 +1,4 @@
-import * as gulpRunner from "gulp";
+import gulpRunner from "gulp";
 import chalk from "chalk";
 
 let _gulp: gulpRunner.Gulp;

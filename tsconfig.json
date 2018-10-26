@@ -9,7 +9,8 @@
 		"lib": [
 			"es2015"
 		],
-		"skipLibCheck": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
 		"outDir": "dist/commonjs",
 		"baseUrl": ".",
 		"paths": {

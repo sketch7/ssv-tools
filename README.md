@@ -48,6 +48,9 @@ compileTsc({
 
 // rollup - execute rollup with cli.
 rollup({ continueOnError: args.continueOnError });
+
+// Prepare for prepublish, as copy files such as `README.md`, `CHANGELOG.md`, copy and transform `package.json`
+prepublish();
 ```
 
 #### gulp utils
