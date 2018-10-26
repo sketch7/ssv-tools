@@ -1,3 +1,10 @@
+## [0.7.5](https://github.com/sketch7/ssv-tools/compare/0.7.4...0.7.5) (2018-10-27)
+
+### Bug Fixes
+
+- **prepublish:** create `dist` directory if not found, instead of throwing
+
+
 ## [0.7.4](https://github.com/sketch7/ssv-tools/compare/0.7.3...0.7.4) (2018-10-27)
 
 ### Features
