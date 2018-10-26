@@ -1,6 +1,6 @@
 {
   "name": "@ssv/tools",
-  "version": "0.7.2",
+  "version": "0.7.3",
   "description": "tools and utilities used for builds and develop sketch7 (ssv) libraries.",
   "keywords": [
     "sketch7",
@@ -25,6 +25,7 @@
     "url": "https://github.com/sketch7/ssv-tools"
   },
   "devDependencies": {
+    "@ssv/core": "^0.4.1",
     "@types/cpx": "^1.5.0",
     "@types/gulp": "4.0.5",
     "@types/node": "^10.12.0",

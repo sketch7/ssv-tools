@@ -47,7 +47,7 @@ export function registerGulpMultiTargetBuilds(options: {
 	}
 	if (config.buildTargets.indexOf(config.devTarget) === -1) {
 		console.error(chalk.red(`${registerGulpMultiTargetBuilds.name} -
-		config should have 'devTarget' should also be defined in 'buildTargets'!`));
+			config should have 'devTarget' should also be defined in 'buildTargets'!`));
 		return;
 	}
 
