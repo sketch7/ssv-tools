@@ -1,3 +1,16 @@
+## [0.7.3](https://github.com/sketch7/ssv-tools/compare/0.7.2...0.7.3) (2018-10-27)
+
+### Features
+
+- **config:** add `esModuleInterop` to `true` in tsconfig by default
+
+
+### Bug Fixes
+
+- **prepublish:** not correctly check whether key exists when transforming package.json
+- **prepublish:** path was not unix format on windows when transforming package.json paths
+
+
 ## [0.7.2](https://github.com/sketch7/ssv-tools/compare/0.7.1...0.7.2) (2018-10-25)
 
 ### Features

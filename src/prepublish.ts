@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import cpx from "cpx";
+import { string } from "@ssv/core";
 // import chalk from "chalk";
 
 /**
@@ -33,11 +34,11 @@ export async function writePackageTransform(distPath = "dist") {
 	// fix paths such as "main"
 	for (const key of pkgKeysNormalizePaths) {
 		const pathToNormalize = pkg[key];
-		if (!path) {
+		if (!pathToNormalize) {
 			continue;
 		}
-
-		pkg[key] = path.relative(distPath, pathToNormalize);
+		const relativePath = path.relative(distPath, pathToNormalize);
+		pkg[key] = string.replaceAll(relativePath, path.win32.sep, path.posix.sep);
 	}
 
 	await fs.promises.writeFile(path.join(distPath, "package.json"), JSON.stringify(pkg, undefined, 2));
