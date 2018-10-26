@@ -1,7 +1,6 @@
 import fs from "fs";
 import path from "path";
 import cpx from "cpx";
-import { string } from "@ssv/core";
 // import chalk from "chalk";
 
 /**
@@ -38,8 +37,12 @@ export async function writePackageTransform(distPath = "dist") {
 			continue;
 		}
 		const relativePath = path.relative(distPath, pathToNormalize);
-		pkg[key] = string.replaceAll(relativePath, path.win32.sep, path.posix.sep);
+		pkg[key] = replaceAll(relativePath, path.win32.sep, path.posix.sep);
 	}
 
 	await fs.promises.writeFile(path.join(distPath, "package.json"), JSON.stringify(pkg, undefined, 2));
+}
+
+function replaceAll(value: string, search: string, replacement: string): string {
+	return value.replace(new RegExp(`\\${search}`, "g"), replacement);
 }

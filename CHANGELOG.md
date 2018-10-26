@@ -1,3 +1,15 @@
+## [0.7.4](https://github.com/sketch7/ssv-tools/compare/0.7.3...0.7.4) (2018-10-27)
+
+### Features
+
+- **transpile:** rollup now supports config in `.ts`
+
+
+### Bug Fixes
+
+- **install:** remove devDependency from `@ssv/core` since it was circular and causing it not to install properly
+
+
 ## [0.7.3](https://github.com/sketch7/ssv-tools/compare/0.7.2...0.7.3) (2018-10-27)
 
 ### Features
