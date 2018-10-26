@@ -40,6 +40,9 @@ export async function writePackageTransform(distPath = "dist") {
 		pkg[key] = replaceAll(relativePath, path.win32.sep, path.posix.sep);
 	}
 
+	if (!fs.existsSync(distPath)) {
+		fs.mkdirSync(distPath);
+	}
 	await fs.promises.writeFile(path.join(distPath, "package.json"), JSON.stringify(pkg, undefined, 2));
 }
 
