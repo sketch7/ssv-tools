@@ -1,3 +1,16 @@
+## [0.8.0](https://github.com/sketch7/ssv-tools/compare/0.7.5...0.8.0) (2018-10-27)
+
+### Features
+
+- **prepublish:** now normalizes much more paths for properties such as `esnext`, `es2015`, etc...
+- **prepublish:** add `prepareReleaseBuild` which update a placeholder version from `package.json`
+
+
+### BREAKING CHANGES
+
+- **prepublish:**  rename `prepublish` to `buildResources`
+
+
 ## [0.7.5](https://github.com/sketch7/ssv-tools/compare/0.7.4...0.7.5) (2018-10-27)
 
 ### Bug Fixes
