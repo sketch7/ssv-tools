@@ -4,7 +4,6 @@ import cpx from "cpx";
 import { readPackageJson } from "./internal";
 import chalk from "chalk";
 
-
 export interface PrepareReleaseBuildOptions {
 	filePath: string;
 	versionPlaceholder: string;
