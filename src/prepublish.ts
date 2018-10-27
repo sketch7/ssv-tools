@@ -76,15 +76,12 @@ export async function writePackageTransform(distPath = "dist") {
 
 /** Write package version onto code placeholder.  */
 export async function writeCodeVersion(filePath = "src/version.ts", versionPlaceholder = "0.0.0-PLACEHOLDER") {
-	console.log("Update version...");
 	if (!fs.existsSync(filePath)) {
-		console.log("File not exists", filePath);
 		return;
 	}
 
 	let fileContents = await fs.promises.readFile(filePath, { encoding: "utf-8" });
 	if (!fileContents || typeof fileContents !== "string") {
-		console.log("File empty", fileContents);
 		return;
 	}
 
