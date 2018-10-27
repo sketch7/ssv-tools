@@ -1,35 +1,45 @@
 import fs from "fs";
 import path from "path";
 import cpx from "cpx";
-// import chalk from "chalk";
+import { readPackageJson } from "./internal";
+import chalk from "chalk";
 
-export interface PackageFormat {
-	[key: string]: any;
 
-	name: string;
-	version: string;
-	scripts?: string;
-	dependencies?: any[];
+export interface PrepareReleaseBuildOptions {
+	filePath: string;
+	versionPlaceholder: string;
+	shouldSkip: boolean;
 }
 
-export interface PrepublishOptions {
-	distPath: string;
-	// distPath: string;
-}
+const PREPARE_RELEASE_DEFAULT_OPTIONS = Object.freeze({
+	filePath: "src/version.ts",
+	versionPlaceholder: "0.0.0-PLACEHOLDER",
+} as PrepareReleaseBuildOptions);
 
 /**
- * Prepare for prepublish, as copy files such as `README.md`, `CHANGELOG.md`, copy and transform `package.json`
+ * Build resource for publishing, copy files such as `README.md`, `CHANGELOG.md`, copy and transform `package.json`
  */
-export async function prepublish(distPath = "dist") {
-	// console.log(chalk`{blue [prepublish]} {yellow starting...}`);
+export async function buildResources(distPath = "dist") {
+	// console.log(chalk`{blue [buildResources]} {yellow starting...}`);
 
 	await writePackageTransform(distPath);
-	await writePackageVersionPlaceholder();
 
 	const contentFileNames = ["LICENSE", "README.md", "CHANGELOG.md"];
 	for (const contentFileName of contentFileNames) {
 		cpx.copySync(contentFileName, distPath);
 	}
+}
+
+/** Update version etc... Generally must be invoked before building release. */
+export async function prepareReleaseBuild(options: Partial<PrepareReleaseBuildOptions> = {}) {
+	options = { ...PREPARE_RELEASE_DEFAULT_OPTIONS, ...options };
+
+	if (options.shouldSkip) {
+		console.log(chalk`{blue [prepareReleaseBuild]} {gray skipping...}`);
+		return;
+	}
+
+	await writeCodeVersion();
 }
 
 /**
@@ -65,7 +75,8 @@ export async function writePackageTransform(distPath = "dist") {
 	await fs.promises.writeFile(path.join(distPath, "package.json"), JSON.stringify(pkg, undefined, 2));
 }
 
-export async function writePackageVersionPlaceholder(filePath = "src/version.ts", versionPlaceholder = "0.0.0-PLACEHOLDER") {
+/** Write package version onto code placeholder.  */
+export async function writeCodeVersion(filePath = "src/version.ts", versionPlaceholder = "0.0.0-PLACEHOLDER") {
 	console.log("Update version...");
 	if (!fs.existsSync(filePath)) {
 		console.log("File not exists", filePath);
@@ -79,13 +90,9 @@ export async function writePackageVersionPlaceholder(filePath = "src/version.ts"
 	}
 
 	const pkgVersion = readPackageJson().version;
-	fileContents =	fileContents.replace(versionPlaceholder, pkgVersion);
+	fileContents = fileContents.replace(versionPlaceholder, pkgVersion);
 
 	await fs.promises.writeFile(filePath, fileContents);
-}
-
-function readPackageJson(): PackageFormat {
-	return JSON.parse(fs.readFileSync("./package.json", "utf-8"));
 }
 
 function replaceAll(value: string, search: string, replacement: string): string {
