@@ -39,18 +39,24 @@ npm install @ssv/tools --save
 ```ts
 import { compileTsc, rollup } from "@ssv/tools";
 
-// compile typescript - execute typescript with cli.
+// compile typescript - execute typescript with cli
 compileTsc({
   module: "es2015",
   configPath: "./tsconfig.build.json",
   continueOnError: args.continueOnError
 });
 
-// rollup - execute rollup with cli.
+// rollup - execute rollup with cli
 rollup({ continueOnError: args.continueOnError });
 
-// Prepare for prepublish, as copy files such as `README.md`, `CHANGELOG.md`, copy and transform `package.json`
-prepublish();
+// microbundle - execute microbundle with cli
+microbundle({ continueOnError: args.continueOnError });
+
+// prepare for prepublish, as copy files such as `README.md`, `CHANGELOG.md`, copy and transform `package.json`
+buildResources();
+
+// prepare release build such as update version placeholder
+prepareReleaseBuild();
 ```
 
 #### gulp utils
