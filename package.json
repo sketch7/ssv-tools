@@ -1,6 +1,6 @@
 {
   "name": "@ssv/tools",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "tools and utilities used for builds and develop sketch7 (ssv) libraries.",
   "keywords": [
     "sketch7",
@@ -39,6 +39,7 @@
     "@speedy/build-tools": "^0.8.1",
     "chalk": "^2.4.1",
     "cross-spawn-promise": "^0.10.1",
+    "microbundle": "^0.7.0",
     "rollup": "^0.66.6",
     "simple-git": "^1.105.0",
     "typescript": "^3.1.3"

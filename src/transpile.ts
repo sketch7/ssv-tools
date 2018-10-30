@@ -64,6 +64,31 @@ export async function rollup(opts: {
 	}
 }
 
+/** Builds `microbundle` via CLI. */
+export async function microbundle(opts: {
+	continueOnError: boolean
+}): Promise<void> {
+	const args = [
+		"build"
+	];
+	console.log(chalk.blue(`microbundle...`));
+
+	const commandPath = getLocalDepOrRoot("node_modules/.bin/microbundle");
+
+	try {
+		await spawn(commandPath, args, { stdio: "inherit" });
+	} catch (e) {
+		const error: spawn.CrossSpawnError = e;
+		console.error(chalk.red("[microbundle] failed!"));
+		if (error.stderr) {
+			console.error(chalk.red(error.stderr.toString()));
+		}
+		if (!opts.continueOnError) {
+			process.exit(1);
+		}
+	}
+}
+
 function getLocalDepOrRoot(file: string): string {
 	const localDep = path.join(__dirname, "../../", file);
 	return fs.existsSync(localDep) ? localDep : file;
