@@ -1,3 +1,10 @@
+## [0.8.1](https://github.com/sketch7/ssv-tools/compare/0.8.0...0.8.1) (2018-10-30)
+
+### Features
+
+- **transpile:** add `microbundle` in order to build using microbundle
+
+
 ## [0.8.0](https://github.com/sketch7/ssv-tools/compare/0.7.5...0.8.0) (2018-10-27)
 
 ### Features
