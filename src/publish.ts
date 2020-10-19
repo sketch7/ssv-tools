@@ -14,7 +14,7 @@ import chalk from "chalk";
 export async function publisher($args: {
 	publishFn?: (bump: string) => Promise<void>,
 	bump: string
-}) {
+}): Promise<void> {
 	const args = { publishFn: performGulpPublish, ...$args };
 	const git = simpleGit();
 
