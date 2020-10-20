@@ -1,10 +1,10 @@
 {
 	"plugins": [
-		"@typescript-eslint",
+		"@typescript-eslint"
 	],
 	"extends": [
 		"eslint:recommended",
-		"plugin:@typescript-eslint/recommended",
+		"plugin:@typescript-eslint/recommended"
 	],
   "rules": {
     "@odin/decorator-position": "error",
