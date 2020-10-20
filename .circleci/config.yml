@@ -46,3 +46,10 @@ jobs:
             print_title "git tag"
             git tag $PACKAGE_VERSION
             git push --tags
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build:
+          context: npm
