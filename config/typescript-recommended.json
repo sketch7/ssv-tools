@@ -1,16 +1,17 @@
 {
 	"plugins": [
-		"@typescript-eslint"
+    "@typescript-eslint",
+    "ban"
 	],
 	"extends": [
 		"eslint:recommended",
 		"plugin:@typescript-eslint/recommended"
 	],
   "rules": {
-    "@odin/decorator-position": "error",
-    "@odin/import-order": "error",
-    "@odin/line-after-method": "error",
-    "@odin/multiline-constructor": "error",
+    // "@odin/decorator-position": "error",
+    // "@odin/import-order": "error",
+    // "@odin/line-after-method": "error",
+    // "@odin/multiline-constructor": "error",
     "@typescript-eslint/array-type": ["error", {
       "default": "array"
     }],

@@ -60,7 +60,7 @@ async function performGulpPublish(bump: string): Promise<void> {
 
 async function mergeLatest($args: {
 	git: simpleGit.SimpleGit,
-	from: string;
+	from: string,
 	to: string
 }) {
 	const { git, to, from } = $args;

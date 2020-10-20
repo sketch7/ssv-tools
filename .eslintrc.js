@@ -13,14 +13,14 @@ Happy linting! 💖
 */
 module.exports = {
 	root: true,
-	parser: '@typescript-eslint/parser',
+	parser: "@typescript-eslint/parser",
 	plugins: [
-		'@typescript-eslint',
+		"@typescript-eslint",
 	],
 	extends: [
-		'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    './config/typescript-recommended.json'
+		"eslint:recommended",
+		"plugin:@typescript-eslint/recommended",
+		"./config/typescript-recommended.json"
 	],
 };
 
