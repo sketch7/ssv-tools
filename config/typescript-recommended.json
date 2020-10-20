@@ -1,12 +1,17 @@
 {
-	"plugins": [
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+  },
+  "plugins": [
     "@typescript-eslint",
-    "ban"
-	],
-	"extends": [
-		"eslint:recommended",
-		"plugin:@typescript-eslint/recommended"
-	],
+    "ban",
+    "deprecation"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
   "rules": {
     // "@odin/decorator-position": "error",
     // "@odin/import-order": "error",
@@ -183,6 +188,7 @@
         "name": ["_", "isUndefined"],
         "message": "Prefer x === undefined instead"
       }
-    ]
+    ],
+    "deprecation/deprecation": "warn"
   }
 }
