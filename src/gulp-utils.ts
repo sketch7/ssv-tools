@@ -32,9 +32,9 @@ export function registerGulpMultiTargetBuilds(options: {
 	/**
 	 * Action to execute for each task, it will provide the `target` as param.
 	 */
-	action: (target: string) => Promise<any>,
+	action: (target: string) => Promise<never>,
 	config: { devTarget: string, buildTargets: string[] }
-}) {
+}): void {
 	const { taskName, config, action } = options;
 	const gulp = getGulp();
 	if (!config.devTarget) {

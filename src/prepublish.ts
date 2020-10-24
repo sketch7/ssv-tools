@@ -18,7 +18,7 @@ const PREPARE_RELEASE_DEFAULT_OPTIONS = Object.freeze({
 /**
  * Build resource for publishing, copy files such as `README.md`, `CHANGELOG.md`, copy and transform `package.json`
  */
-export async function buildResources(distPath = "dist") {
+export async function buildResources(distPath = "dist"): Promise<void> {
 	// console.log(chalk`{blue [buildResources]} {yellow starting...}`);
 
 	await writePackageTransform(distPath);
@@ -30,7 +30,7 @@ export async function buildResources(distPath = "dist") {
 }
 
 /** Update version etc... Generally must be invoked before building release. */
-export async function prepareReleaseBuild(options: Partial<PrepareReleaseBuildOptions> = {}) {
+export async function prepareReleaseBuild(options: Partial<PrepareReleaseBuildOptions> = {}): Promise<void> {
 	options = { ...PREPARE_RELEASE_DEFAULT_OPTIONS, ...options };
 
 	if (options.shouldSkip) {
@@ -44,7 +44,7 @@ export async function prepareReleaseBuild(options: Partial<PrepareReleaseBuildOp
 /**
  * Copy and transform package.json for publishing.
  */
-export async function writePackageTransform(distPath = "dist") {
+export async function writePackageTransform(distPath = "dist"): Promise<void> {
 	const pkgKeysNormalizePaths = [
 		"main", "umd:main", "module", "typings", "es2015",
 		"esm5", "esm2015", "fesm5", "fesm2015", "metadata",
@@ -75,7 +75,7 @@ export async function writePackageTransform(distPath = "dist") {
 }
 
 /** Write package version onto code placeholder.  */
-export async function writeCodeVersion(filePath = "src/version.ts", versionPlaceholder = "0.0.0-PLACEHOLDER") {
+export async function writeCodeVersion(filePath = "src/version.ts", versionPlaceholder = "0.0.0-PLACEHOLDER"): Promise<void> {
 	if (!fs.existsSync(filePath)) {
 		return;
 	}

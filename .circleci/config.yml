@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/repo
     docker:
-      - image: circleci/node:10.4
+      - image: circleci/node:12.19.0
     steps:
       - run:
           name: Print environment versions
@@ -26,13 +26,16 @@ jobs:
       - run:
           name: Test
           command: npm test
-      - deploy:
-          name: Publish NPM
+      - run:
+          name: Check if branch is publishable
           command: |
             if [ "$CIRCLE_BRANCH" != "master" ]; then
               echo -e "\e[33m Branch does not publish -- exit!"
-              exit
+              circleci step halt
             fi
+      - deploy:
+          name: Publish NPM
+          command: |
             . ./.circleci/utils.sh
 
             PACKAGE_VERSION=$(node -p "require('./package.json').version")
@@ -43,3 +46,10 @@ jobs:
             print_title "git tag"
             git tag $PACKAGE_VERSION
             git push --tags
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build:
+          context: npm

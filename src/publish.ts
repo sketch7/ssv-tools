@@ -14,7 +14,7 @@ import chalk from "chalk";
 export async function publisher($args: {
 	publishFn?: (bump: string) => Promise<void>,
 	bump: string
-}) {
+}): Promise<void> {
 	const args = { publishFn: performGulpPublish, ...$args };
 	const git = simpleGit();
 
@@ -60,7 +60,7 @@ async function performGulpPublish(bump: string): Promise<void> {
 
 async function mergeLatest($args: {
 	git: simpleGit.SimpleGit,
-	from: string;
+	from: string,
 	to: string
 }) {
 	const { git, to, from } = $args;

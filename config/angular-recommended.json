@@ -1,0 +1,32 @@
+{
+  "extends": [
+    "./typescript-recommended.json"
+  ],
+  "plugins": [
+    "@angular-eslint"
+  ],
+  "rules": {
+    "@angular-eslint/component-class-suffix": [
+      "error",
+      {
+        "suffixes": [
+          "Component",
+          "Container"
+        ]
+      }
+    ],
+    "@angular-eslint/contextual-lifecycle": "error",
+    "@angular-eslint/directive-class-suffix": "error",
+    "@angular-eslint/no-conflicting-lifecycle": "error",
+    "@angular-eslint/no-lifecycle-call": "error",
+    "@angular-eslint/no-output-native": "error",
+    "@angular-eslint/no-output-on-prefix": "error",
+    "@angular-eslint/no-pipe-impure": "error",
+    "@angular-eslint/prefer-output-readonly": "error",
+    "@angular-eslint/relative-url-prefix": "error",
+    "@angular-eslint/use-injectable-provided-in": "error",
+    "@angular-eslint/use-lifecycle-interface": "error",
+    "@angular-eslint/use-pipe-decorator": "error",
+    "@angular-eslint/use-pipe-transform-interface": "error"
+  }
+}

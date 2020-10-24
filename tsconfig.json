@@ -11,7 +11,7 @@
 		],
     "esModuleInterop": true,
     "skipLibCheck": true,
-		"outDir": "dist/commonjs",
+    "outDir": "./dist",
 		"baseUrl": ".",
 		"paths": {
 			"simple-git/promise": ["typings/simple-git/promise"]

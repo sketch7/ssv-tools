@@ -1,3 +1,10 @@
+## [0.9.0](https://github.com/sketch7/ssv-tools/compare/0.8.1...0.9.0) (2018-10-21)
+
+### Features
+
+- **eslint:** add eslint for TypeScript (migration from tslint)
+- **deps:** update most dependencies
+
 ## [0.8.1](https://github.com/sketch7/ssv-tools/compare/0.8.0...0.8.1) (2018-10-30)
 
 ### Features
