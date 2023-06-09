@@ -21,7 +21,7 @@ jobs:
     name: Package
     uses: sketch7/.github/.github/workflows/node-lib.yml@feature/node-lib
     with:
-      node-version: '18'
-      publishable: ${{ contains(fromJSON('["develop", "master", "workflow", "feature/workflow"]'), github.ref_name) || endsWith(github.ref_name, '.x')  }}
+      node-version: '18' # todo: remove test branch
+      publishable: ${{ contains(fromJSON('["develop", "master", "workflow", "feature/workflow", "feature/ci-and-clean"]'), github.ref_name) || endsWith(github.ref_name, '.x')  }}
     secrets:
       npm-auth-token: ${{ secrets.NPM_KEY }}
