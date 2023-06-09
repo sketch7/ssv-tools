@@ -49,9 +49,6 @@ compileTsc({
 // rollup - execute rollup with cli
 rollup({ continueOnError: args.continueOnError });
 
-// microbundle - execute microbundle with cli
-microbundle({ continueOnError: args.continueOnError });
-
 // prepare for prepublish, as copy files such as `README.md`, `CHANGELOG.md`, copy and transform `package.json`
 buildResources();
 
@@ -129,9 +126,9 @@ ssvTools.compileTsc(...);
 ### Setup Machine for Development
 Install/setup the following:
 
-- NodeJS v10+
+- NodeJS v18+
 - Visual Studio Code or similar code editor
-- TypeScript 3.1+
+- TypeScript 5.0+
 - Git + SourceTree, SmartGit or similar (optional)
 - Ensure to install **global NPM modules** using the following:
 
