@@ -1,11 +1,19 @@
+## [0.10.0](https://github.com/sketch7/ssv-tools/compare/0.9.1...0.10.0) (2023-10-24)
+
+### Features
+
+- **deps:** update most dependencies
+
+### BREAKING CHANGES
+
+- **lint:** remove lint api
+- **lint:** remove `microbundle`
+
 ## [0.9.1](https://github.com/sketch7/ssv-tools/compare/0.9.0...0.9.1) (2018-10-24)
 
 ### Features
 
 - **eslint:** add `angular-eslint/eslint-plugin` plugin
-
-### Features
-
 - **eslint:** add eslint for TypeScript (migration from tslint)
 - **deps:** update most dependencies
 

@@ -25,7 +25,7 @@ export async function compileTsc(opts: {
 	try {
 		await spawn(commandPath, args, { stdio: "inherit" });
 	} catch (e) {
-		const error: spawn.CrossSpawnError = e;
+		const error = e as spawn.CrossSpawnError;
 		console.error(chalk.red("[rollup] failed!"));
 		if (error.stderr) {
 			console.error(chalk.red(error.stderr.toString()));
@@ -53,33 +53,8 @@ export async function rollup(opts: {
 	try {
 		await spawn(commandPath, args, { stdio: "inherit" });
 	} catch (e) {
-		const error: spawn.CrossSpawnError = e;
+		const error = e as spawn.CrossSpawnError;
 		console.error(chalk.red("[rollup] failed!"));
-		if (error.stderr) {
-			console.error(chalk.red(error.stderr.toString()));
-		}
-		if (!opts.continueOnError) {
-			process.exit(1);
-		}
-	}
-}
-
-/** Builds `microbundle` via CLI. */
-export async function microbundle(opts: {
-	continueOnError: boolean
-}): Promise<void> {
-	const args = [
-		"build"
-	];
-	console.log(chalk.blue(`microbundle...`));
-
-	const commandPath = getLocalDepOrRoot("node_modules/.bin/microbundle");
-
-	try {
-		await spawn(commandPath, args, { stdio: "inherit" });
-	} catch (e) {
-		const error: spawn.CrossSpawnError = e;
-		console.error(chalk.red("[microbundle] failed!"));
 		if (error.stderr) {
 			console.error(chalk.red(error.stderr.toString()));
 		}

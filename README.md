@@ -8,7 +8,7 @@
 [npm]: https://www.npmjs.com
 
 # @ssv/tools
-[![CircleCI](https://circleci.com/gh/sketch7/ssv-tools.svg?style=shield)](https://circleci.com/gh/sketch7/ssv-tools)
+[![CI](https://github.com/sketch7/ssv-tools/actions/workflows/ci.yml/badge.svg)](https://github.com/sketch7/ssv-tools/actions/workflows/ci.yml)
 [![npm version](https://badge.fury.io/js/%40ssv%2Ftools.svg)](https://badge.fury.io/js/%40ssv%2Ftools)
 
 tools and utilities used for builds and develop sketch7 (ssv) libraries.
@@ -48,9 +48,6 @@ compileTsc({
 
 // rollup - execute rollup with cli
 rollup({ continueOnError: args.continueOnError });
-
-// microbundle - execute microbundle with cli
-microbundle({ continueOnError: args.continueOnError });
 
 // prepare for prepublish, as copy files such as `README.md`, `CHANGELOG.md`, copy and transform `package.json`
 buildResources();
@@ -129,9 +126,9 @@ ssvTools.compileTsc(...);
 ### Setup Machine for Development
 Install/setup the following:
 
-- NodeJS v10+
+- NodeJS v18+
 - Visual Studio Code or similar code editor
-- TypeScript 3.1+
+- TypeScript 5.0+
 - Git + SourceTree, SmartGit or similar (optional)
 - Ensure to install **global NPM modules** using the following:
 
