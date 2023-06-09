@@ -49,7 +49,7 @@ async function performGulpPublish(bump: string): Promise<void> {
 		console.log(chalk.green("[performGulpPublish] success!"));
 		console.log(result.toString());
 	} catch (e) {
-		const error: spawn.CrossSpawnError = e;
+		const error = e as spawn.CrossSpawnError;
 		console.error(chalk.red("[performGulpPublish] failed!"));
 		if (error.stderr) {
 			console.error(chalk.red(error.stderr.toString()));
