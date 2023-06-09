@@ -1,23 +1,26 @@
 {
-	"extends": "./config/tsconfig.json",
-	"compilerOptions": {
-		"module": "commonjs",
-		"target": "es2015",
-		"types": [
-			"node"
-		],
-		"lib": [
-			"es2015"
-		],
+  "extends": "./config/tsconfig.json",
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "types": [
+      "node"
+    ],
+    "lib": [
+      "es2015",
+    ],
     "esModuleInterop": true,
     "skipLibCheck": true,
+    "strict": true,
     "outDir": "./dist",
-		"baseUrl": ".",
-		"paths": {
-			"simple-git/promise": ["typings/simple-git/promise"]
-		}
-	},
-	"include": [
-		"src/**/*"
-	]
+    "baseUrl": ".",
+    "paths": {
+      "simple-git/promise": [
+        "typings/simple-git/promise"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*"
+  ]
 }
