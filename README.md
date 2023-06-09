@@ -8,7 +8,7 @@
 [npm]: https://www.npmjs.com
 
 # @ssv/tools
-[![CircleCI](https://circleci.com/gh/sketch7/ssv-tools.svg?style=shield)](https://circleci.com/gh/sketch7/ssv-tools)
+[![CI](https://github.com/sketch7/ssv-tools/actions/workflows/ci.yml/badge.svg)](https://github.com/sketch7/ssv-tools/actions/workflows/ci.yml)
 [![npm version](https://badge.fury.io/js/%40ssv%2Ftools.svg)](https://badge.fury.io/js/%40ssv%2Ftools)
 
 tools and utilities used for builds and develop sketch7 (ssv) libraries.
