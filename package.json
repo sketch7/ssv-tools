@@ -14,7 +14,7 @@
     "lint": "eslint -c .eslintrc.js --ext .ts \"src/**/*.ts\"",
     "prebuild": "rimraf dist && npm run lint",
     "build": "tsc -b",
-    "publish": "npm run publish"
+    "publish": "npm publish"
   },
   "author": "Stephen Lautier <stephen.lautier@outlook.com>",
   "license": "MIT",
