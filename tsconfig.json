@@ -2,7 +2,7 @@
   "extends": "./config/tsconfig.json",
   "compilerOptions": {
     "module": "commonjs",
-    "target": "es6",
+    "target": "es2015",
     "types": [
       "node"
     ],
