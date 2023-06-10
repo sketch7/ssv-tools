@@ -19,8 +19,7 @@ on:
 jobs:
   package:
     name: Package
-    # uses: sketch7/.github/.github/workflows/node-lib.yml@master
-    uses: sketch7/.github/.github/workflows/node-lib.yml@feature/node-lib-ng
+    uses: sketch7/.github/.github/workflows/node-lib.yml@master
     with:
       node-version: '18' # todo: remove test branch
       publishable: ${{ contains(fromJSON('["develop", "master", "workflow"]'), github.ref_name) || endsWith(github.ref_name, '.x')  }}
