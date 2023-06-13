@@ -12,9 +12,9 @@
     "start": "npm run watch",
     "watch": "tsc -w",
     "lint": "eslint -c .eslintrc.js --ext .ts \"src/**/*.ts\"",
-    "prebuild": "rimraf dist && npm run lint",
     "build": "tsc -b",
-    "release": "npm publish"
+    "release": "npm publish",
+    "clean": "rimraf dist"
   },
   "author": "Stephen Lautier <stephen.lautier@outlook.com>",
   "license": "MIT",
