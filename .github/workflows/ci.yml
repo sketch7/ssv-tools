@@ -23,5 +23,6 @@ jobs:
     with:
       node-version: '18' # todo: remove test branch
       publishable: ${{ contains(fromJSON('["develop", "master", "workflow"]'), github.ref_name) || endsWith(github.ref_name, '.x')  }}
+      preid-branches: "develop" # when using 1.x, 2.x for release comment this
     secrets:
       npm-auth-token: ${{ secrets.NPM_KEY }}
