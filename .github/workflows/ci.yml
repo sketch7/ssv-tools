@@ -23,6 +23,11 @@ on:
         required: false
         type: boolean
         default: false
+      force-prerelease:
+        description: 'Force Pre-release'
+        required: false
+        type: boolean
+        default: true
 
 jobs:
   package:
@@ -33,5 +38,6 @@ jobs:
       node-version: '18'
       publishable: ${{ contains(fromJSON('["develop", "master", "workflow"]'), github.ref_name) || endsWith(github.ref_name, '.x') || github.event.inputs.publish == 'true' }}
       # preid-branches: "develop" # when using 1.x, 2.x for release comment this
+      force-preid: ${{ github.event.inputs.force-prerelease == 'true' }}
     secrets:
       npm-auth-token: ${{ secrets.NPM_KEY }}
