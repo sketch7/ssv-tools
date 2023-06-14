@@ -11,16 +11,14 @@ node_modules
 /.vscode
 /.circleci
 /.cache
+/.github
 npm-debug.log
 *.tgz
 
 _artifact
-/.eslintrc
-/tslint.json
-/.stylelintrc
-/tsconfig.json
-/tsconfig.build.json
-/tsconfig.test.json
+.eslintrc
+.eslintrc.js
+.stylelintrc
 .editorconfig
 .gitignore
 .npmignore
@@ -31,7 +29,13 @@ karma.conf.js
 package-lock.json
 rollup.config.js
 system.config.js
+tslint.json
 typings.json
 wallaby.js
 yarn.lock
+ng-package.json
+ng-package.js
 CODEOWNERS
+/tsconfig.json
+/tsconfig.build.json
+/tsconfig.test.json
