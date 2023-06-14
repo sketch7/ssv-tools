@@ -17,12 +17,12 @@ on:
       - '**.md'
 
   workflow_dispatch:
-  #   inputs:
-  #     publish:
-  #       description: 'Publish 🚀'
-  #       required: false
-  #       type: boolean
-  #       default: false
+    inputs:
+      publish:
+        description: 'Publish 🚀'
+        required: false
+        type: boolean
+        default: false
 
 jobs:
   package:
