@@ -5,6 +5,7 @@ node_modules
 /typings
 /src
 /test
+/examples
 /build
 /tools
 /.idea
