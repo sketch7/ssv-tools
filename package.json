@@ -1,6 +1,6 @@
 {
   "name": "@ssv/tools",
-  "version": "0.10.3",
+  "version": "0.10.4",
   "description": "tools and utilities used for builds and develop sketch7 (ssv) libraries.",
   "keywords": [
     "sketch7",
@@ -35,14 +35,14 @@
     "yargs": "^17.7.2"
   },
   "dependencies": {
-    "@angular-eslint/eslint-plugin": "^16.0.3",
-    "@typescript-eslint/eslint-plugin": "^5.59.9",
-    "@typescript-eslint/parser": "^5.59.9",
+    "@angular-eslint/eslint-plugin": "^16.1.2",
+    "@typescript-eslint/eslint-plugin": "^6.6.0",
+    "@typescript-eslint/parser": "^6.6.0",
     "chalk": "^5.2.0",
     "cross-spawn-promise": "^0.10.2",
-    "eslint": "^8.42.0",
+    "eslint": "^8.48.0",
     "eslint-plugin-ban": "^1.6.0",
-    "eslint-plugin-deprecation": "^1.4.1",
+    "eslint-plugin-deprecation": "^1.5.0",
     "simple-git": "^1.105.0",
     "typescript": "^5.0.4"
   },

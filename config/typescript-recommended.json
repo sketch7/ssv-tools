@@ -25,7 +25,13 @@
     "@typescript-eslint/explicit-member-accessibility": ["error", {
       "accessibility": "no-public"
     }],
-    "@typescript-eslint/indent": ["error", "tab"],
+    "@typescript-eslint/indent": ["error", "tab", {
+      "SwitchCase": 1,
+      "ignoredNodes": [
+        "ObjectLiteralExpression",
+        "PropertyDefinition[decorators]"
+      ]
+    }],
     "@typescript-eslint/member-delimiter-style": [
       "error",
       {
@@ -132,7 +138,7 @@
     "no-multiple-empty-lines": [
       "error",
       {
-        "max": 2
+        "max": 1
       }
     ],
     "no-new-wrappers": "error",
@@ -187,8 +193,22 @@
       {
         "name": ["_", "isUndefined"],
         "message": "Prefer x === undefined instead"
+      },
+      {
+        "name": ["_", "each"],
+        "message": "Prefer _.forEach instead"
+      },
+      {
+        "name": ["_", "eachRight"],
+        "message": "Prefer _.forEachRight instead"
       }
     ],
-    "deprecation/deprecation": "warn"
+    // "import/no-useless-path-segments": "error",
+    // "import/no-self-import": "error",
+    // "import/no-absolute-path": "error",
+    // "import/no-cycle": ["error", {
+    //   "maxDepth": 2
+    // }],
+    "indent": "off"
   }
 }
