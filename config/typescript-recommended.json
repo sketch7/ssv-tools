@@ -209,6 +209,7 @@
     // "import/no-cycle": ["error", {
     //   "maxDepth": 2
     // }],
-    "indent": "off"
+    "indent": "off",
+    "deprecation/deprecation": "warn"
   }
 }
