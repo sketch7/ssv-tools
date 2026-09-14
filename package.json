@@ -1,5 +1,12 @@
 {
   "name": "@ssv/tools",
+  "engines": {
+    "node": ">=24.14.0",
+    "npm": ">=11.5.1"
+  },
+  "volta": {
+    "node": "24.14.0"
+  },
   "version": "0.10.4",
   "description": "tools and utilities used for builds and develop sketch7 (ssv) libraries.",
   "keywords": [
